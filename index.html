@@ -53,45 +53,46 @@
       </section>
 
       <aside class="drawing-screen">
-        <section class="data-draw">
+        <section class="data-draw grid gap-40">
+          <header class="intro-draw grid">
+            <h2>Quero sortear:</h2>
+            <p>
+              Defina o intervalo e a quantidade de números, clique em "Sortear"
+              e veja os resultados na tela. É rápido e fácil!
+            </p>
+          </header>
           <fieldset>
-            <header class="intro-draw">
-              <h2>Quero sortear:</h2>
-              <p>
-                Defina o intervalo e a quantidade de números, clique em
-                "Sortear" e veja os resultados na tela. É rápido e fácil!
-              </p>
-            </header>
+            <form action="" id="submitForm">
+              <div class="input-content flex">
+                <div class="input-wrapper">
+                  <label for="amount">Números</label>
+                  <input type="text" id="amount" name="amount-number" />
+                </div>
 
-            <form action="">
-              <div class="input-wrapper">
-                <label for="amount">Números</label>
-                <input type="text" id="amount" />
-              </div>
+                <div class="input-wrapper">
+                  <label for="initial">de</label>
+                  <input type="text" id="initial" name="initial-number" />
+                </div>
 
-              <div class="input-wrapper">
-                <label for="initial">de</label>
-                <input type="text" id="initial" />
-              </div>
-
-              <div class="input-wrapper">
-                <label for="final">Até</label>
-                <input type="text" id="final" />
+                <div class="input-wrapper">
+                  <label for="final">Até</label>
+                  <input type="text" id="final" name="final-number" />
+                </div>
               </div>
 
               <div class="toggle-switch">
-                <input type="checkbox" name="toggle" id="" />
+                <input type="checkbox" name="toggle" id="toggle-btn" />
                 <label for="toggle">Não repetir número</label>
-              </div>
-
-              <div class="button-draw">
-                <button type="submit">
-                  Sortear
-                  <img src="/assets/arrow.svg" alt="Arrow" />
-                </button>
               </div>
             </form>
           </fieldset>
+
+          <div class="button-draw">
+            <button type="submit" form="submitForm">
+              Sortear
+              <img src="/assets/arrow.svg" alt="Arrow" />
+            </button>
+          </div>
         </section>
 
         <!-- <section class="result-screen">
