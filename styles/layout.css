@@ -17,6 +17,7 @@ body header {
 
   & .draw-rules {
     width: 386px;
+
     & .rules span {
       font: var(--r-flex-14);
       color: var(--content-brand);

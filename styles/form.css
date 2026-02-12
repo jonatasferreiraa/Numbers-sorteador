@@ -1,0 +1,115 @@
+aside.drawing-screen {
+  & section.data-draw {
+    & .intro-draw {
+      gap: 0.25rem;
+
+      & p {
+        font: var(--r-flex-14);
+      }
+    }
+  }
+}
+
+form {
+  & .input-wrapper {
+    justify-items: center;
+    gap: 0.5rem;
+
+    & label {
+      font: var(--r-flex-label-16);
+      color: var(--content-secondary);
+      text-transform: uppercase;
+    }
+
+    /* Muda a cord da label quando há foco */
+
+    &:has(:focus) > label {
+      color: var(--content-brand);
+    }
+
+    & input {
+      /* caixa do input */
+      width: 86px;
+      height: 56px;
+
+      background-color: var(--background-secondary);
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+
+      /* texto do input */
+      color: var(--content-primary);
+      font: var(--sora-32);
+      padding: 0.25rem 0.5rem;
+
+      transition: 800ms ease;
+
+      /* mudança de cor de fundo quando há foco e quando detecta o cursor */
+
+      &:focus {
+        background-color: var(--background-tertiary);
+      }
+
+      &:hover {
+        background-color: var(--background-tertiary);
+      }
+    }
+
+    /* Muda a cor do card de input quando há foco */
+    &:has(:focus-within) .border-gradient {
+      /* centraliza a a borda na caixa do input */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* define o tamanho da caixa e arredondamento da borda*/
+      width: 90px; /*equivale à 4px de borda*/
+      height: 60px; /*equivale à 4px de borda*/
+      border-radius: 0.5rem;
+
+      /* define a cor da caixa*/
+      background: linear-gradient(
+        to right,
+        #77c0af 0%,
+        #d1dc97 14.84%,
+        #e9a9b3 32.15%,
+        #d586e0 65.79%,
+        #91a1fa 84.58%
+      );
+    }
+
+    /* Muda a cor do card de input quando detectar o cursor */
+    .border-gradient:hover {
+      /* centraliza a a borda na caixa do input */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* define o tamanho da caixa e arredondamento da borda*/
+      width: 88px; /*equivale à 2px de borda*/
+      height: 58px; /*equivale à 2px de borda*/
+      border-radius: 0.5rem;
+
+      /* define a cor da caixa*/
+      background: linear-gradient(
+        to right,
+        #77c0af 0%,
+        #d1dc97 14.84%,
+        #e9a9b3 32.15%,
+        #d586e0 65.79%,
+        #91a1fa 84.58%
+      );
+    }
+
+    .border-gradient {
+      outline: linear-gradient(
+        to right,
+        #77c0af 0%,
+        #d1dc97 14.84%,
+        #e9a9b3 32.15%,
+        #d586e0 65.79%,
+        #91a1fa 84.58%
+      );
+    }
+  }
+}
