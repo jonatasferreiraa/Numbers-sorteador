@@ -1,0 +1,36 @@
+body {
+  width: min(1366px, 100% - 134px * 2);
+  margin-inline: auto;
+}
+
+body header {
+  margin-top: 4.75rem;
+}
+
+.container {
+  margin-top: 89px;
+  gap: 108px;
+
+  & .hero-container {
+    gap: 2.375rem;
+  }
+
+  & .draw-rules {
+    width: 386px;
+    & .rules span {
+      font: var(--r-flex-14);
+      color: var(--content-brand);
+    }
+
+    & .rules:nth-child(1) {
+      padding-bottom: 2.25rem;
+    }
+  }
+}
+
+@media (width <= 62.5rem) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
