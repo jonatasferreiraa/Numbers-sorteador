@@ -1,0 +1,41 @@
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-40 {
+  gap: 2.5rem;
+}
+
+.gap-12 {
+  gap: 0.75rem;
+}
+
+.row-columns-1 {
+  grid-template-columns: 1fr;
+}
+.row-columns-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+/* 1000px */
+@media (width <= 62.5rem) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
