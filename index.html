@@ -16,12 +16,16 @@
   </head>
   <body>
     <header>
-      <img src="/assets/logo.svg" alt="" />
+      <a href="#">
+        <img src="/assets/logo.svg" alt="Logo Numbers" />
+      </a>
     </header>
-    <main class="flex">
-      <div class="hero-container">
-        <span>Online - gratuito</span>
-        <h1>Sorteador de números</h1>
+    <main class="container flex">
+      <section class="hero-container grid">
+        <div class="hero-title gap-12">
+          <span>Online - gratuito</span>
+          <h1>Sorteador de números</h1>
+        </div>
 
         <div class="draw-rules desktop-only">
           <div class="rules">
@@ -46,15 +50,19 @@
             </p>
           </div>
         </div>
-      </div>
+      </section>
+
       <aside class="drawing-screen">
-        <div class="data-draw">
+        <section class="data-draw">
           <fieldset>
-            <h2>Quero sortear:</h2>
-            <p>
-              Defina o intervalo e a quantidade de números, clique em "Sortear"
-              e veja os resultados na tela. É rápido e fácil!
-            </p>
+            <header class="intro-draw">
+              <h2>Quero sortear:</h2>
+              <p>
+                Defina o intervalo e a quantidade de números, clique em
+                "Sortear" e veja os resultados na tela. É rápido e fácil!
+              </p>
+            </header>
+
             <form action="">
               <div class="input-wrapper">
                 <label for="amount">Números</label>
@@ -84,10 +92,9 @@
               </div>
             </form>
           </fieldset>
-        </div>
-      </aside>
+        </section>
 
-      <!-- <aside class="result-screen">
+        <!-- <section class="result-screen">
         <header>
           <h2>Resultado do sorteio:</h2>
           <p>1° resultado</p>
@@ -106,7 +113,8 @@
           <img src="/assets/play.svg" alt="" />
           <img src="/assets/circle.svg" alt="" />
         </button>
-      </aside> -->
+    </section> -->
+      </aside>
     </main>
     <footer class="mobile-only">
       <div class="draw-rules">
