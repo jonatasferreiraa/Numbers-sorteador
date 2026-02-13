@@ -73,3 +73,9 @@ button {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+@media (width <= 62.5rem) {
+  h1 {
+    font: var(--sora-40);
+  }
+}

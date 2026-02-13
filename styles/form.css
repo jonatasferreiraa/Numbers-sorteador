@@ -274,3 +274,15 @@ form {
     transform: rotate(360deg);
   }
 }
+
+@media (width <= 62.5rem) {
+  aside.drawing-screen {
+    & .intro-draw {
+      margin-top: 0;
+
+      & p {
+        font: var(--r-flex-14);
+      }
+    }
+  }
+}

@@ -23,15 +23,48 @@ body header {
       color: var(--content-brand);
     }
 
-    & .rules:nth-child(1) {
+    & .rules:first-child {
       padding-bottom: 2.25rem;
     }
   }
 }
 
 @media (width <= 62.5rem) {
+  body {
+    width: min(390px, 100% - 35px * 2);
+    margin-inline: auto;
+    margin-bottom: 44px;
+  }
+
+  body header {
+    margin-bottom: 0;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr;
+
+    margin-top: 46px;
+    gap: 42px;
+
+    & .intro-draw {
+    }
+    
+  }
+
+  footer{
+    & .draw-rules {
+    margin-top: 80px;
+
+    & .rules span {
+      font: var(--r-flex-14);
+      color: var(--content-brand);
+    }
+
+    & .rules:first-child {
+      padding-bottom: 2.25rem;
+    }
+  }
+}
   }
 }
