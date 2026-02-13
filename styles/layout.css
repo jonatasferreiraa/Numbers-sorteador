@@ -49,22 +49,20 @@ body header {
 
     & .intro-draw {
     }
-    
   }
 
-  footer{
+  footer {
     & .draw-rules {
-    margin-top: 80px;
+      margin-top: 80px;
 
-    & .rules span {
-      font: var(--r-flex-14);
-      color: var(--content-brand);
-    }
+      & .rules span {
+        font: var(--r-flex-14);
+        color: var(--content-brand);
+      }
 
-    & .rules:first-child {
-      padding-bottom: 2.25rem;
+      & .rules:first-child {
+        padding-bottom: 2.25rem;
+      }
     }
-  }
-}
   }
 }

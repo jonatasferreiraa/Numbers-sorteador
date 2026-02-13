@@ -232,8 +232,8 @@ form {
 & .button-draw:hover {
   &::before {
     content: "";
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     z-index: -1;
 
