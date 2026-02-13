@@ -1,18 +1,19 @@
 aside.drawing-screen {
-  & section.data-draw {
-    & .intro-draw {
-      gap: 0.25rem;
+  & .intro-draw {
+    gap: 0.25rem;
 
-      & p {
-        font: var(--r-flex-14);
-      }
+    & p {
+      font: var(--r-flex-14);
     }
   }
 }
 
 form {
+  /* inputs de formulario */
+
   & .input-wrapper {
     justify-items: center;
+    align-items: center;
     gap: 0.5rem;
 
     & label {
@@ -23,8 +24,7 @@ form {
 
     /* Muda a cord da label quando há foco e hover*/
 
-    &:has(:focus),
-    &:has(:hover) > label {
+    &:is(:hover, :focus-within) > label {
       color: var(--content-brand);
     }
 
@@ -47,7 +47,7 @@ form {
 
       /* mudança de cor de fundo quando há foco e quando detecta o cursor */
 
-      &:focus {
+      &:focus-within {
         background-color: var(--background-tertiary);
       }
 
@@ -114,6 +114,8 @@ form {
     }
   }
 
+  /* botão deslizante */
+
   & .toggle-switch label {
     font: var(--r-flex-14);
     color: var(--content-primary);
@@ -175,5 +177,100 @@ form {
       height: 20px;
       border-radius: 1rem;
     }
+  }
+}
+
+/* container de botão */
+
+& .button-draw {
+  height: 3.5rem; /* 56 px */
+  padding: 1.6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  /* arrendondando as bordas */
+
+  &,
+  button {
+    border-radius: 0.5rem;
+  }
+
+  /* estilo do botão  */
+
+  & button {
+    width: 100%;
+    height: 100%;
+    background: var(--background-tertiary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    color: var(--content-primary);
+    font: var(--r-flex-16);
+    font-weight: 700;
+
+    &:hover {
+      background: var(--background-secondary);
+
+      & .arrow-btn {
+        animation: translate-arrow 2s linear infinite;
+      }
+    }
+  }
+}
+
+/* animação  de gradient no hover */
+
+& .button-draw:hover {
+  &::before {
+    content: "";
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: -1;
+
+    background: linear-gradient(
+      to right,
+      #77c0af 0%,
+      #d1dc97 14.84%,
+      #e9a9b3 32.15%,
+      #d586e0 65.79%,
+      #91a1fa 84.58%
+    );
+    border-radius: inherit;
+
+    animation: gradient-rotate 600ms linear infinite;
+  }
+}
+
+/* animação de seta do botão */
+
+@keyframes translate-arrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* animação de rotação do gradient */
+
+@keyframes gradient-rotate {
+  to {
+    transform: rotate(360deg);
   }
 }
