@@ -21,9 +21,10 @@ form {
       text-transform: uppercase;
     }
 
-    /* Muda a cord da label quando há foco */
+    /* Muda a cord da label quando há foco e hover*/
 
-    &:has(:focus) > label {
+    &:has(:focus),
+    &:has(:hover) > label {
       color: var(--content-brand);
     }
 
@@ -42,7 +43,7 @@ form {
       font: var(--sora-32);
       padding: 0.25rem 0.5rem;
 
-      transition: 800ms ease;
+      transition: 600ms ease;
 
       /* mudança de cor de fundo quando há foco e quando detecta o cursor */
 
@@ -110,6 +111,69 @@ form {
         #d586e0 65.79%,
         #91a1fa 84.58%
       );
+    }
+  }
+
+  & .toggle-switch label {
+    font: var(--r-flex-14);
+    color: var(--content-primary);
+
+    margin-left: 2.375rem; /* 38 px */
+  }
+
+  & .toggle-switch {
+    width: fit-content;
+    margin-top: 1.25rem;
+
+    position: relative;
+
+    & #checkbox {
+      position: absolute;
+      inset: 0;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      background-color: var(--content-tertiary);
+      border-radius: 1rem;
+    }
+
+    &::after {
+      display: none;
+      transition: 400ms ease;
+    }
+
+    & .slider {
+      position: absolute;
+      background-color: var(--content-primary);
+      border-radius: 100%;
+
+      width: 0.875rem;
+      height: 0.875rem;
+      top: 50%;
+      left: 3px;
+      transform: translateY(-50%);
+      pointer-events: none;
+
+      transition: 400ms ease;
+    }
+
+    & #checkbox:checked + .slider {
+      transform: translateY(-50%) translateX(10px);
+    }
+    & #checkbox:checked,
+    &::after {
+      content: "";
+      background: linear-gradient(to right, #d586e0, #91a1fa);
+
+      width: 30px;
+      height: 20px;
+      border-radius: 1rem;
     }
   }
 }

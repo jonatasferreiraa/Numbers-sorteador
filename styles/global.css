@@ -36,10 +36,13 @@
 
 body {
   background:
-    linear-gradient(to bottom, #000 60%, transparent) center / cover no-repeat,
+    linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 100%)
+      center / cover no-repeat,
     url(/assets/pattern.svg),
     center/cover no-repeat;
   background-color: var(--background-primary);
+
+  min-height: 100vh;
 }
 
 h1,
