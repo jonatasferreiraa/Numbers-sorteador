@@ -14,11 +14,13 @@
 
 /* Números do sorteio */
 
-.number-content {
+.number-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.25rem;
+
+  position: relative;
 
   & .box-number {
     display: flex;
@@ -31,10 +33,32 @@
 
     background-color: var(--content-brand);
     border-radius: 1.75rem;
+  }
 
-    & span {
-      font: 700 4rem/150% var(--roboto-mono);
-    }
+  & output {
+    position: absolute;
+    font: 700 4rem/150% var(--roboto-mono);
+    color: var(--content-inverse);
+
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* animação de caixa de número */
+
+  & .box-number {
+    animation:
+      entryScaleBox 400ms ease forwards,
+      endScaleBox 400ms ease forwards,
+      rotateBoxNumber 800ms ease 1s forwards,
+      ApperBoxNumber 400ms ease 2s forwards;
+  }
+
+  /* animação de número */
+  & output {
+    animation:
+      entryScaleNumber 2s ease forwards,
+      colorInverse 400ms ease 2s forwards;
   }
 }
 
@@ -124,8 +148,118 @@
 
 /* ### Animações de tela ###*/
 
+/* animação de rotação do icone do botão */
+
 @keyframes rotateArrow {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* animação de caixa do número sorteado */
+
+@keyframes ApperBoxNumber {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes entryScaleBox {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes endScaleBox {
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes entryScaleBox {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotateBoxNumber {
+  0% {
+    transform: rotate(0);
+  }
+
+  10% {
+    transform: rotate(-18deg);
+  }
+
+  20% {
+    transform: rotate(-36deg);
+  }
+
+  30% {
+    transform: rotate(-54deg);
+  }
+
+  40% {
+    transform: rotate(-72deg);
+  }
+
+  50% {
+    transform: rotate(-90deg);
+  }
+
+  60% {
+    transform: rotate(-108deg);
+  }
+
+  70% {
+    transform: rotate(-126deg);
+  }
+
+  80% {
+    transform: rotate(-144deg);
+  }
+
+  90% {
+    transform: rotate(-162deg);
+  }
+
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+/* animação de  número sorteado */
+
+@keyframes entryScaleNumber {
+  0% {
+    transform: scale(0) translateY(-50%);
+  }
+
+  20% {
+    transform: scale(1.1) translateY(-50%);
+  }
+
+  90% {
+    transform: scale(1.1) translateY(-50%);
+  }
+
+  100% {
+    transform: scale(1) translateY(-50%);
+  }
+}
+
+@keyframes colorInverse {
+  to {
+    color: var(--content-brand);
   }
 }
