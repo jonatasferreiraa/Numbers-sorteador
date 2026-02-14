@@ -75,11 +75,18 @@
     font: var(--r-flex-16);
     font-weight: 700;
 
+    position: relative;
+
+    & img[src="/assets/play.svg"] {
+      position: absolute;
+      right: 9rem;
+    }
+
     &:hover {
       background: var(--background-secondary);
 
-      & .arrow-btn {
-        animation: translate-arrow 2s linear infinite;
+      & img[src="/assets/circle.svg"] {
+        animation: rotateArrow 1s ease infinite;
       }
     }
   }
@@ -112,5 +119,13 @@
 @media (width <= 62.5rem) {
   .result-screen {
     width: 100%;
+  }
+}
+
+/* ### Animações de tela ###*/
+
+@keyframes rotateArrow {
+  to {
+    transform: rotate(360deg);
   }
 }
