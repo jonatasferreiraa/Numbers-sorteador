@@ -16,6 +16,10 @@ body header {
   gap: 6.75rem;
 }
 
+.hero-container {
+  min-width: 510px;
+}
+
 .drawing-screen {
   max-width: 482px;
 }
@@ -54,8 +58,12 @@ body header {
     gap: 42px;
   }
 
+  .hero-container {
+    min-width: 100%;
+  }
+
   .drawing-screen {
-    max-width: 100%;
+    min-width: 100%;
   }
 
   footer {
