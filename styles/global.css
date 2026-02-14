@@ -42,7 +42,8 @@ body {
     center/cover no-repeat;
   background-color: var(--background-primary);
 
-  min-height: 782px;
+  min-height: 100vh;
+  overflow-y: hidden;
 }
 
 h1,
@@ -77,5 +78,9 @@ button {
 @media (width <= 62.5rem) {
   h1 {
     font: var(--sora-40);
+  }
+
+  body {
+    overflow-y: auto;
   }
 }
