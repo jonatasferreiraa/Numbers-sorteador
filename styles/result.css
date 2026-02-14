@@ -1,0 +1,116 @@
+/* container e header */
+.result-screen {
+  & .title-result {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & p {
+      font: var(--r-mono-16);
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Números do sorteio */
+
+.number-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+
+  & .box-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-block: 0.5rem;
+
+    background-color: var(--content-brand);
+    border-radius: 1.75rem;
+
+    & span {
+      font: 700 4rem/150% var(--roboto-mono);
+    }
+  }
+}
+
+/* botão de sortear novamente */
+
+.button-new-draw {
+  height: 3.5rem; /* 56 px */
+  padding: 1.6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  /* arrendondando as bordas */
+
+  &,
+  button {
+    border-radius: 0.5rem;
+  }
+
+  /* estilo do botão  */
+
+  & button {
+    width: 100%;
+    height: 100%;
+    background: var(--background-tertiary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    color: var(--content-primary);
+    font: var(--r-flex-16);
+    font-weight: 700;
+
+    &:hover {
+      background: var(--background-secondary);
+
+      & .arrow-btn {
+        animation: translate-arrow 2s linear infinite;
+      }
+    }
+  }
+}
+
+/* animação  de gradient no hover */
+
+.button-new-draw:hover {
+  &::before {
+    content: "";
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+
+    background: linear-gradient(
+      to right,
+      #77c0af 0%,
+      #d1dc97 14.84%,
+      #e9a9b3 32.15%,
+      #d586e0 65.79%,
+      #91a1fa 84.58%
+    );
+    border-radius: inherit;
+
+    animation: gradient-rotate 600ms linear infinite;
+  }
+}
+
+@media (width <= 62.5rem) {
+  .result-screen {
+    width: 100%;
+  }
+}

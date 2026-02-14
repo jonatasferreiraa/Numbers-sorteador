@@ -20,9 +20,10 @@
         <img src="/assets/logo.svg" alt="Logo Numbers" />
       </a>
     </header>
-    <main class="container flex">
+    <main class="container grid">
+      <!-- container de apresentação de sorteador -->
       <section class="hero-container grid">
-        <div class="hero-title gap-12">
+        <div class="hero-title">
           <span>Online - gratuito</span>
           <h1>Sorteador de números</h1>
         </div>
@@ -54,9 +55,9 @@
 
       <!-- container de sorteio -->
 
-      <aside class="drawing-screen">
+      <section class="drawing-screen grid">
         <!-- seção de formulario -->
-        <section class="data-draw grid gap-40">
+        <div class="data-draw grid gap-40">
           <!-- titulo e texto de intro -->
           <header class="intro-draw grid">
             <h2>Quero sortear:</h2>
@@ -73,21 +74,36 @@
                 <div class="input-wrapper grid">
                   <label for="amount">Números</label>
                   <div class="border-gradient">
-                    <input type="text" id="amount" name="amount-number" />
+                    <input
+                      type="text"
+                      id="amount"
+                      name="amount-number"
+                      value="2"
+                    />
                   </div>
                 </div>
 
                 <div class="input-wrapper grid">
                   <label for="initial">de</label>
                   <div class="border-gradient">
-                    <input type="text" id="initial" name="initial-number" />
+                    <input
+                      type="text"
+                      id="initial"
+                      name="initial-number"
+                      value="1"
+                    />
                   </div>
                 </div>
 
                 <div class="input-wrapper grid">
                   <label for="final">Até</label>
                   <div class="border-gradient">
-                    <input type="text" id="final" name="final-number" />
+                    <input
+                      type="text"
+                      id="final"
+                      name="final-number"
+                      value="100"
+                    />
                   </div>
                 </div>
               </div>
@@ -100,37 +116,39 @@
             </form>
           </fieldset>
 
+          <!-- botão de entrada -->
           <div class="button-draw">
             <button type="submit" form="submitForm">
               Sortear
               <img src="/assets/arrow.svg" alt="Arrow" class="arrow-btn" />
             </button>
           </div>
-        </section>
+        </div>
 
         <!-- seção de resultado de sorteio -->
 
-        <!-- <section class="result-screen">
-        <header>
-          <h2>Resultado do sorteio:</h2>
-          <p>1° resultado</p>
-        </header>
+        <div class="result-screen invisible gap-40">
+          <header class="title-result flex">
+            <h2>Resultado do sorteio:</h2>
+            <p>1° resultado</p>
+          </header>
 
-        <div class="number-content">
-          <div class="box-number">
-            <span class="draw-result">12</span>
-            <span class="draw-result">12</span>
+          <div class="number-content">
+            <div class="box-number">
+              <span class="draw-result">33</span>
+            </div>
+          </div>
+
+          <div class="button-new-draw">
+            <button type="button">
+              Sortear novamente
+
+              <img src="/assets/play.svg" alt="" />
+              <img src="/assets/circle.svg" alt="" />
+            </button>
           </div>
         </div>
-
-        <button type="button">
-          Sortear novamente
-
-          <img src="/assets/play.svg" alt="" />
-          <img src="/assets/circle.svg" alt="" />
-        </button>
-    </section> -->
-      </aside>
+      </section>
     </main>
     <footer class="mobile-only">
       <div class="draw-rules">

@@ -22,6 +22,10 @@
   display: block;
 }
 
+.invisible {
+  display: none;
+}
+
 /* 1000px */
 @media (width <= 62.5rem) {
   .mobile-only {

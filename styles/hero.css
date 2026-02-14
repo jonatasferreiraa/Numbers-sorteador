@@ -1,0 +1,14 @@
+.hero-container {
+  /* espaçamento entre titulo e regras */
+  gap: 2.375rem; /*38px*/
+
+  /* container de titulo e tag */
+  & .hero-title {
+    /* tag "online - gratuito"*/
+    & span {
+      color: var(--content-secondary);
+      font: var(--r-mono-16);
+      text-transform: uppercase;
+    }
+  }
+}

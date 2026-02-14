@@ -5,27 +5,29 @@ body {
 
 body header {
   margin-top: 4.75rem;
+  margin-bottom: 89px;
 }
 
+/* container de conteúdo */
 .container {
-  margin-top: 89px;
-  gap: 108px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 
-  & .hero-container {
-    gap: 2.375rem;
+  gap: 6.75rem;
+}
+
+/* container de regras */
+
+& .draw-rules {
+  width: 386px;
+
+  & .rules span {
+    font: var(--r-flex-14);
+    color: var(--content-brand);
   }
 
-  & .draw-rules {
-    width: 386px;
-
-    & .rules span {
-      font: var(--r-flex-14);
-      color: var(--content-brand);
-    }
-
-    & .rules:first-child {
-      padding-bottom: 2.25rem;
-    }
+  & .rules:first-child {
+    padding-bottom: 2.25rem;
   }
 }
 
@@ -46,13 +48,11 @@ body header {
 
     margin-top: 46px;
     gap: 42px;
-
-    & .intro-draw {
-    }
   }
 
   footer {
     & .draw-rules {
+      width: 100%;
       margin-top: 80px;
 
       & .rules span {

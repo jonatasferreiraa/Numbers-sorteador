@@ -42,7 +42,7 @@ body {
     center/cover no-repeat;
   background-color: var(--background-primary);
 
-  min-height: 100vh;
+  min-height: 782px;
 }
 
 h1,

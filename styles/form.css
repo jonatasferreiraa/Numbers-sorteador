@@ -1,10 +1,9 @@
-aside.drawing-screen {
-  & .intro-draw {
-    gap: 0.25rem;
+.intro-draw {
+  margin: 0;
+  gap: 0.25rem;
 
-    & p {
-      font: var(--r-flex-14);
-    }
+  & p {
+    font: var(--r-flex-14);
   }
 }
 
@@ -30,8 +29,8 @@ form {
 
     & input {
       /* caixa do input */
-      width: 86px;
-      height: 56px;
+      width: 5.375rem; /*86px*/
+      height: 3.5rem; /*56px*/
 
       background-color: var(--background-secondary);
       border-radius: 0.5rem;
@@ -39,6 +38,9 @@ form {
       outline: none;
 
       /* texto do input */
+      display: flex;
+      align-items: center;
+      justify-items: center;
       color: var(--content-primary);
       font: var(--sora-32);
       padding: 0.25rem 0.5rem;
@@ -251,6 +253,16 @@ form {
   }
 }
 
+@media (width <= 62.5rem) {
+  .intro-draw {
+    margin-top: 0;
+
+    & p {
+      font: var(--r-flex-14);
+    }
+  }
+}
+
 /* animação de seta do botão */
 
 @keyframes translate-arrow {
@@ -272,17 +284,5 @@ form {
 @keyframes gradient-rotate {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media (width <= 62.5rem) {
-  aside.drawing-screen {
-    & .intro-draw {
-      margin-top: 0;
-
-      & p {
-        font: var(--r-flex-14);
-      }
-    }
   }
 }
