@@ -1,14 +1,21 @@
-.hero-container {
-  /* espaçamento entre titulo e regras */
-  gap: 2.375rem; /*38px*/
+/* Container de apresentação do sorteador */
 
+.hero-container .hero-title {
   /* container de titulo e tag */
-  & .hero-title {
-    /* tag "online - gratuito"*/
-    & span {
-      color: var(--content-secondary);
-      font: var(--r-mono-16);
-      text-transform: uppercase;
-    }
+  margin-bottom: 2.375rem; /*38px*/
+
+  /* tag "online - gratuito"*/
+
+  & span {
+    color: var(--content-secondary);
+    font: var(--r-mono-16);
+    text-transform: uppercase;
+  }
+}
+
+@media (width <= 62.5rem) {
+  .hero-container .hero-title {
+    /* container de titulo e tag */
+    margin-bottom: 0; /*38px*/
   }
 }
