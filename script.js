@@ -21,7 +21,16 @@ form.onsubmit = (event) => {
   validateForm(); // chama a função de validação do formulário
 
   console.log(
-    generateNumbers(amountInput.value, initialInput.value, finalInput.value),
+    generateNumbers(
+      parseInt(amountInput.value),
+      parseInt(initialInput.value),
+      parseInt(finalInput.value),
+    ),
+    generateRandomNumbers(
+      parseInt(amountInput.value),
+      parseInt(initialInput.value),
+      parseInt(finalInput.value),
+    ),
   );
 };
 
@@ -81,4 +90,29 @@ function generateNumbers(amount, initial, final) {
   }
 
   return numbers;
+}
+
+// função para gerar números sem repetição
+function generateRandomNumbers(amount, initial, final) {
+  const noRepeatCheckbox = document.getElementById("checkbox");
+
+  if (noRepeatCheckbox.checked) {
+    const numbers = new Set();
+    const range = final - initial + 1;
+    if (amount > range) {
+      showAlertMessage(
+        "A quantidade de números solicitada excede o intervalo disponível.",
+      );
+      return [];
+    }
+
+    while (numbers.size < amount) {
+      const randomNum = Math.floor(Math.random() * range) + initial;
+      numbers.add(randomNum);
+    }
+
+    return Array.from(numbers);
+  } else {
+    return generateNumbers(amount, initial, final);
+  }
 }
