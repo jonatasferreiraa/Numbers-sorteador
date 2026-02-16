@@ -6,10 +6,11 @@
 
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5rem;
+
+  gap: 1rem;
   margin-bottom: 1.25rem;
 
-  font: var(--r-flex-label-16);
+  font: var(--r-flex-14);
   color: var(--content-brand);
 
   position: relative;
@@ -50,5 +51,18 @@
 
   to {
     transform: translateY(0);
+  }
+}
+
+@media (width <= 62.5rem) {
+  .alert-message {
+    font: var(--r-flex-12);
+  }
+
+  #close-icon {
+    position: absolute;
+    width: 1rem;
+    right: 1.25rem;
+    cursor: pointer;
   }
 }

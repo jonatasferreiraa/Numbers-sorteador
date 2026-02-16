@@ -19,25 +19,20 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.25rem;
-  
 
   & > div.number-content {
     position: relative;
     display: flex;
-      align-items: center;
-      justify-content: center;
+    align-items: center;
+    justify-content: center;
 
     & .box-number {
-      
-
       width: 6.25rem;
       height: 6.25rem;
       margin-block: 0.5rem;
 
       background-color: var(--content-brand);
       border-radius: 1.75rem;
-
-      
     }
 
     & output {
@@ -81,6 +76,8 @@
   position: relative;
 
   overflow: hidden;
+
+  transition: opacity 400ms ease;
 
   /* arrendondando as bordas */
 
