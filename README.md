@@ -19,7 +19,14 @@ Navegação:
 
 Uma interface com responsividade ( desktop: 1366px ) ( mobile: 390px)
 
-Projeto desenvolvido com intuito de **Estudos em Javascript básico**.  
+Projeto desenvolvido com intuito de **Estudos em Javascript**.  
+
+
+<h3>Resenha </h3>
+<p>Foi um projeto que me desafiou muito, tive que buscar estudar e aprimorar a fundo minha lógica de programação, e também conteúdos sobre as funcionalidades utilizadas, sai desse projeto mais capacitado
+a enfrentar desafios que fazem parte da vida de um DEV. Me ajudou a pensar como um desenvolvedor pensa, saio desse projeto mais preparado para novos desafios que estão por vir.</p>
+
+
 
 🔗 [Link do projeto no Figma](https://app.rocketseat.com.br/projects/desafio-pratico-sorteador-de-numeros?module_slug=desafio-pratico-sorteador-de-numeros&origin=%2Fjourney%2Ffull-stack%2Fcontents)
 
