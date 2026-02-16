@@ -9,7 +9,6 @@ const noRepeatCheckbox = document.getElementById("checkbox");
 const drawingScreen = document.querySelector(".drawing-screen");
 const dataDraw = document.querySelector(".data-draw");
 const resultScreen = document.querySelector(".result-screen");
-const titleResult = document.querySelector(".title-result");
 
 // percorre todos os inputs da lista
 dataInput.forEach((input) => {
@@ -123,6 +122,7 @@ function generateNumbers(amount, initial, final) {
 
 let DrawNumber = 0; // variável para contar o número de sorteios realizados
 
+// função para exibir os números sorteados na tela de resultado
 function displayNumbers(numbers) {
   try {
     dataDraw.classList.add("invisible"); // esconde a tela de formulario
