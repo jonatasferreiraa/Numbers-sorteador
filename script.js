@@ -14,14 +14,18 @@ dataInput.forEach((input) => {
   };
 });
 
+// evento de envio do formulário
 form.onsubmit = (event) => {
   event.preventDefault(); // impede o carregamento de envio do formulário
 
   validateForm(); // chama a função de validação do formulário
 
-  console.log("Formulário enviado com sucesso!"); // mensagem de sucesso (mensagem provisória);
+  console.log(
+    generateNumbers(amountInput.value, initialInput.value, finalInput.value),
+  );
 };
 
+// função para mostrar a mensagem de alerta de erro
 function showAlertMessage(message) {
   const alertMessage = document.querySelector(".alert-message");
 
@@ -50,6 +54,7 @@ function showAlertMessage(message) {
   }, 5000); // esconde a mensagem após 5 segundos
 }
 
+// função para validar o formulário
 function validateForm() {
   const amount = parseInt(amountInput.value);
   const initial = parseInt(initialInput.value);
@@ -65,4 +70,15 @@ function validateForm() {
   } else {
     return true;
   }
+}
+
+// função para gerar números com repetição
+function generateNumbers(amount, initial, final) {
+  const numbers = [];
+  const range = final - initial + 1;
+  for (let i = 0; i < amount; i++) {
+    numbers.push(Math.floor(Math.random() * range) + initial);
+  }
+
+  return numbers;
 }
