@@ -23,7 +23,7 @@ Projeto desenvolvido com intuito de **Estudos em Javascript**.
 
 
 <h3>Resenha </h3>
-<p>Foi um projeto que me desafiou muito, tive que buscar estudar e aprimorar a fundo minha lógica de programação, e também conteúdos sobre as funcionalidades utilizadas, sai desse projeto mais capacitado
+<p>Foi um projeto que me desafiou muito, tive que buscar estudar e aprimorar a fundo minha lógica de programação, e também conteúdos sobre as funcionalidades utilizadas, saio desse projeto me sentindo mais capacitado
 a enfrentar desafios que fazem parte da vida de um DEV. Me ajudou a pensar como um desenvolvedor pensa, saio desse projeto mais preparado para novos desafios que estão por vir.</p>
 
 
