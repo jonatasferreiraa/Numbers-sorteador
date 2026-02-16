@@ -1,0 +1,59 @@
+<h1 align= "center"><h1> 📩 Quicklist - Lista de Compras Online   </h1></h1>
+
+
+Navegação:
+
+<p align= "center">
+<a href="#sobre">Sobre o projeto</a> |
+<a href="#tecnologias">Tecnologias</a> |
+<a href="#como-rodar-localmente">Como rodar Localmente</a> |
+<a href="#pré-requisitos">Pré requisitos</a> |
+<a href="#licença">Licença</a>
+</p>
+
+<img width="1020" height="553" alt="1758211504214" src="" />
+
+
+## Sobre
+
+
+Uma interface com responsividade ( desktop: 1366px ) ( mobile: 390px)
+
+Projeto desenvolvido com intuito de **Estudos em Javascript básico**.  
+
+🔗 [Link do projeto no Figma](https://www.figma.com/community/file/1397279978314668489/lista-de-compras)
+
+---
+
+## Tecnologias 
+- **HTML5** → Estruturação de tags semânticas 
+- **CSS3** → estilização avançada e responsiva e animações em css. 
+- **Javascript** → Manipulação do DOM, Funções e eventos e Lógica. 
+
+---
+
+##  Demonstração 
+🔗 [Acesse o projeto online]()  
+
+---
+
+##  Como rodar localmente
+1. Clone este repositório
+   
+   ```bash
+   git clone https://github.com/jonatasferreiraa/Lista-de-compras.git
+
+
+3. Abra o arquivo `index.html` diretamente no navegador  
+
+---
+
+##  Pré-requisitos
+
+- Apenas um **editor de código** de sua preferência (ex: VS Code / Cursor e etc...)  
+
+---
+
+##  Licença
+Projeto desenvolvido como parte da [Rocketsea<img width="1020" height="553" alt="1758211965188" src="https://github.com/user-attachments/assets/9b4869c5-fea0-494e-9ac2-d4931df19c36" />
+t](https://www.rocketseat.com.br/) 🚀  
