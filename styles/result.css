@@ -147,6 +147,32 @@
   .result-screen {
     width: 100%;
   }
+
+  .button-new-draw {
+    position: relative;
+    & button {
+      & img[src="/assets/play.svg"] {
+        position: absolute;
+        right: 3.957rem;
+      }
+    }
+  }
+}
+
+@media (width = 80rem) {
+  .result-screen {
+    width: 100%;
+  }
+
+  .button-new-draw {
+    position: relative;
+    & button {
+      & img[src="/assets/play.svg"] {
+        position: absolute;
+        right: 6.3rem;
+      }
+    }
+  }
 }
 
 /* ### Animações de tela ###*/
