@@ -19,46 +19,52 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.25rem;
+  
 
-  position: relative;
-
-  & .box-number {
+  & > div.number-content {
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+      align-items: center;
+      justify-content: center;
 
-    width: 6.25rem;
-    height: 6.25rem;
-    margin-block: 0.5rem;
+    & .box-number {
+      
 
-    background-color: var(--content-brand);
-    border-radius: 1.75rem;
-  }
+      width: 6.25rem;
+      height: 6.25rem;
+      margin-block: 0.5rem;
 
-  & output {
-    position: absolute;
-    font: 700 4rem/150% var(--roboto-mono);
-    color: var(--content-inverse);
+      background-color: var(--content-brand);
+      border-radius: 1.75rem;
 
-    top: 50%;
-    transform: translateY(-50%);
-  }
+      
+    }
 
-  /* animação de caixa de número */
+    & output {
+      position: absolute;
+      font: 700 4rem/150% var(--roboto-mono);
+      color: var(--content-inverse);
 
-  & .box-number {
-    animation:
-      entryScaleBox 400ms ease forwards,
-      endScaleBox 400ms ease forwards,
-      rotateBoxNumber 800ms ease 1s forwards,
-      ApperBoxNumber 400ms ease 2s forwards;
-  }
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-  /* animação de número */
-  & output {
-    animation:
-      entryScaleNumber 2s ease forwards,
-      colorInverse 400ms ease 2s forwards;
+    /* animação de caixa de número */
+
+    & .box-number {
+      animation:
+        entryScaleBox 400ms ease forwards,
+        endScaleBox 400ms ease forwards,
+        rotateBoxNumber 800ms ease 1s forwards,
+        ApperBoxNumber 400ms ease 2s forwards;
+    }
+
+    /* animação de número */
+    & output {
+      animation:
+        entryScaleNumber 2s ease forwards,
+        colorInverse 400ms ease 2s forwards;
+    }
   }
 }
 

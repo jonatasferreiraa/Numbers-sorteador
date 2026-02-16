@@ -54,10 +54,9 @@
       </section>
 
       <!-- container de sorteio -->
-
       <section class="drawing-screen grid">
         <!-- seção de formulario -->
-        <div class="data-draw invisible gap-40">
+        <div class="data-draw grid gap-40">
           <!-- titulo e texto de intro -->
           <header class="intro-draw grid">
             <h2>Quero sortear:</h2>
@@ -127,17 +126,19 @@
 
         <!-- seção de resultado de sorteio -->
 
-        <div class="result-screen grid gap-40">
+        <div class="result-screen invisible gap-40">
           <header class="title-result flex">
             <h2>Resultado do sorteio:</h2>
             <p>1° resultado</p>
           </header>
 
-          <!-- containe de número sorteado -->
+          <!-- container de número sorteado -->
 
           <div class="number-container">
-            <div class="box-number"></div>
-            <output class="draw-result" aria-live="polite">33</output>
+            <div class="number-content">
+              <div class="box-number"></div>
+              <output class="draw-result" aria-live="polite">33</output>
+            </div>
           </div>
 
           <div class="button-new-draw">
@@ -151,6 +152,7 @@
         </div>
       </section>
     </main>
+
     <footer class="mobile-only">
       <div class="draw-rules">
         <div class="rules">
