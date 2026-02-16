@@ -22,6 +22,34 @@ form.onsubmit = (event) => {
   console.log("Formulário enviado com sucesso!"); // mensagem de sucesso (mensagem provisória);
 };
 
+function showAlertMessage(message) {
+  const alertMessage = document.querySelector(".alert-message");
+
+  const alertIcon = document.createElement("img");
+  alertIcon.src = "/assets/icon-error.svg";
+  alertIcon.alt = "Erro";
+
+  const closeIcon = document.createElement("img");
+  closeIcon.id = "close-icon";
+  closeIcon.src = "/assets/icon-close.svg";
+  closeIcon.alt = "Fechar";
+
+  alertMessage.textContent = message;
+  alertMessage.classList.remove("invisible"); // torna a mensagem visível
+
+  alertMessage.prepend(alertIcon);
+  alertMessage.appendChild(closeIcon);
+
+  // adiciona um evento de clique ao ícone de fechar para esconder a mensagem
+  closeIcon.onclick = () => {
+    alertMessage.classList.add("invisible");
+  };
+
+  setTimeout(() => {
+    alertMessage.classList.add("invisible");
+  }, 5000); // esconde a mensagem após 5 segundos
+}
+
 function validateForm() {
   const amount = parseInt(amountInput.value);
   const initial = parseInt(initialInput.value);
@@ -29,10 +57,10 @@ function validateForm() {
 
   // condições de validação: verifica se os campos estão preenchidos e se o valor inicial é menor que o valor final
   if (!amount || !initial || !final) {
-    alert("Por favor, preencha todos os campos.");
+    showAlertMessage("Por favor, preencha todos os campos.");
     return false;
   } else if (initial >= final) {
-    alert("O valor inicial deve ser menor que o valor final.");
+    showAlertMessage("O valor inicial deve ser menor que o valor final.");
     return false;
   } else {
     return true;

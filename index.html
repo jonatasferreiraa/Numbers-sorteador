@@ -56,6 +56,14 @@
 
       <!-- container de sorteio -->
       <section class="drawing-screen grid">
+        <!-- Mensagem de erro -->
+        <span class="alert-message flex invisible">
+          <img src="/assets/icon-error.svg" alt="Erro" />
+          Por favor, preencha todos os campos.
+
+          <img src="/assets/close-message.svg" id="close-icon" alt="fechar" />
+        </span>
+
         <!-- seção de formulario -->
         <div class="data-draw grid gap-40">
           <!-- titulo e texto de intro -->
@@ -126,7 +134,7 @@
         </div>
 
         <!-- seção de resultado de sorteio (Em breve feito no DOM) -->
-        <div class="result-screen grid invisible gap-40">
+        <div class="result-screen invisible gap-40">
           <header class="title-result flex">
             <h2>Resultado do sorteio:</h2>
             <p>1° resultado</p>
@@ -150,15 +158,6 @@
             </button>
           </div>
         </div>
-
-        <!-- Mensagem de erro (Em breve feito no DOM) -->
-
-        <span class="alert-message flex invisible">
-          <img src="/assets/icon-error.svg" alt="Erro" />
-          Por favor, preencha todos os campos.
-
-          <img src="/assets/close-message.svg" id="close-icon" alt="fechar" />
-        </span>
       </section>
     </main>
 

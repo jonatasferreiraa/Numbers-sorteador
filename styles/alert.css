@@ -7,13 +7,15 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.5rem;
-  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 
   font: var(--r-flex-label-16);
   color: var(--content-brand);
 
   position: relative;
   overflow: hidden;
+
+  animation: apperMessage 400ms ease forwards;
 
   &::before {
     content: "";
@@ -25,17 +27,28 @@
     top: 95%;
     left: 0;
 
-    animation: Loading 3s ease forwards;
+    animation: Loading 5s linear forwards;
   }
 }
 
 #close-icon {
   position: absolute;
   right: 1.5rem;
+  cursor: pointer;
 }
 
 @keyframes Loading {
   to {
     left: -100%;
+  }
+}
+
+@keyframes apperMessage {
+  from {
+    transform: translateY(-20px);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
