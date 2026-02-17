@@ -81,6 +81,9 @@ function validateForm() {
   } else if (initial >= final) {
     showAlertMessage("O valor inicial deve ser menor que o valor final.");
     return false;
+  } else if (amount < initial || amount > final) {
+    showAlertMessage("A quantidade de números excede o intervalo disponível.");
+    return false;
   } else {
     return true;
   }
@@ -99,25 +102,20 @@ function generateRandomNumbers(amount, initial, final) {
 
 // função para gerar números aleatórios sem repetição;
 function generateNumbers(amount, initial, final) {
-  if (noRepeatCheckbox.checked) {
-    const numbers = new Set();
-    const range = final - initial + 1;
-    if (amount > range) {
-      showAlertMessage(
-        "A quantidade de números excede o intervalo disponível.",
-      );
-      return [];
-    }
+  const numbers = new Set();
+  const range = final - initial + 1;
 
+  // verifica se a opção de não repetição está marcada e, se estiver, gera números únicos até atingir a quantidade desejada
+  if (noRepeatCheckbox.checked) {
     while (numbers.size < amount) {
       const randomNum = Math.floor(Math.random() * range) + initial;
       numbers.add(randomNum);
     }
-
-    return Array.from(numbers);
   } else {
     return generateRandomNumbers(amount, initial, final);
   }
+
+  return Array.from(numbers);
 }
 
 let DrawNumber = 0; // variável para contar o número de sorteios realizados
