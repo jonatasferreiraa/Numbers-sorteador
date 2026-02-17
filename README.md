@@ -17,7 +17,7 @@ Navegação:
 ## Sobre
 
 
-Uma interface com responsividade ( desktop: 1366px ) ( mobile: 390px)
+Uma interface com responsividade do DESKTOP ao MOBILE;
 
 Projeto desenvolvido com intuito de **Estudos em Javascript**.  
 
