@@ -174,6 +174,8 @@ function displayNumbers(numbers) {
         const buttonNewDraw = document.createElement("div");
         buttonNewDraw.classList.add("button-new-draw");
         const button = document.createElement("button");
+        const iconContent = document.createElement("span");
+        iconContent.classList.add("icon-content");
         const playIcon = document.createElement("img");
         const circleIcon = document.createElement("img");
         button.type = "submit";
@@ -183,8 +185,9 @@ function displayNumbers(numbers) {
         circleIcon.src = "/assets/circle.svg";
         circleIcon.alt = "Circle";
 
-        button.appendChild(playIcon);
-        button.appendChild(circleIcon);
+        button.appendChild(iconContent);
+        iconContent.appendChild(playIcon);
+        iconContent.appendChild(circleIcon);
         buttonNewDraw.appendChild(button);
         resultScreen.append(buttonNewDraw);
 

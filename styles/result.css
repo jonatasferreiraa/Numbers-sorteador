@@ -80,6 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 
   position: relative;
 
@@ -105,17 +106,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
 
     color: var(--content-primary);
     font: var(--r-flex-16);
     font-weight: 700;
 
-    position: relative;
+    .icon-content {
+      position: relative;
 
-    & img[src="/assets/play.svg"] {
-      position: absolute;
-      right: 9rem;
+      & img[src="/assets/circle.svg"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      & img[src="/assets/play.svg"] {
+        position: absolute;
+        left: 28%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
 
     &:hover {
@@ -149,38 +160,6 @@
     border-radius: inherit;
 
     animation: gradient-rotate 600ms linear infinite;
-  }
-}
-
-@media (width <= 62.5rem) {
-  .result-screen {
-    width: 100%;
-  }
-
-  .button-new-draw {
-    position: relative;
-    & button {
-      & img[src="/assets/play.svg"] {
-        position: absolute;
-        right: 3.957rem;
-      }
-    }
-  }
-}
-
-@media (width = 80rem) {
-  .result-screen {
-    width: 100%;
-  }
-
-  .button-new-draw {
-    position: relative;
-    & button {
-      & img[src="/assets/play.svg"] {
-        position: absolute;
-        right: 6.3rem;
-      }
-    }
   }
 }
 
