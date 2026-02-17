@@ -81,7 +81,7 @@ function validateForm() {
   } else if (initial >= final) {
     showAlertMessage("O valor inicial deve ser menor que o valor final.");
     return false;
-  } else if (amount < initial || amount > final) {
+  } else if (amount > final - initial + 1 && noRepeatCheckbox.checked) {
     showAlertMessage("A quantidade de números excede o intervalo disponível.");
     return false;
   } else {
@@ -149,7 +149,7 @@ function displayNumbers(numbers) {
     // variável para controlar o índice do número a ser exibido
     let indexNum = 0;
 
-    const showNumbers = () => {
+    function showNumbers() {
       // verifica se ainda há números para exibir
       if (indexNum < numbers.length) {
         // cria os elementos para exibir o número sorteado
@@ -168,7 +168,8 @@ function displayNumbers(numbers) {
         numbersContainer.append(numberContent);
         numberContent.append(numberSorted);
         indexNum++;
-        setTimeout(showNumbers, 3500); // Método que exibirá os números com um atraso para a animação
+
+        setTimeout(showNumbers, 3500); // chama a função novamente após 3,5 segundos para exibir o próximo número
       } else {
         const buttonNewDraw = document.createElement("div");
         buttonNewDraw.classList.add("button-new-draw");
@@ -181,7 +182,6 @@ function displayNumbers(numbers) {
         playIcon.alt = "Play";
         circleIcon.src = "/assets/circle.svg";
         circleIcon.alt = "Circle";
-        buttonNewDraw.style.opacity = 0;
 
         button.appendChild(playIcon);
         button.appendChild(circleIcon);
@@ -198,7 +198,7 @@ function displayNumbers(numbers) {
           displayNumbers(numbers); // chama a função para exibir os números novamente
         };
       }
-    };
+    }
 
     showNumbers(); // inicia a exibição dos números sorteado
     DrawNumber++; // incrementa o número do sorteio para o próximo resultado
