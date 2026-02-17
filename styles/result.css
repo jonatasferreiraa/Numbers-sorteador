@@ -37,7 +37,7 @@
 
     & output {
       position: absolute;
-      font: 700 4rem/150% var(--roboto-mono);
+      font: 700 3rem/150% var(--roboto-mono);
       color: var(--content-inverse);
 
       top: 50%;
@@ -47,18 +47,26 @@
     /* animação de caixa de número */
 
     & .box-number {
+      scale: 0;
+      transition: scale 400ms ease;
+
       animation:
-        entryScaleBox 400ms ease forwards,
-        endScaleBox 400ms ease forwards,
+        entryScaleBox 400ms ease both,
         rotateBoxNumber 800ms ease 1s forwards,
-        ApperBoxNumber 400ms ease 2s forwards;
+        ApperBoxNumber 400ms ease 2s forwards,
+        endScaleBox 400ms ease 2s forwards;
     }
 
     /* animação de número */
     & output {
+      opacity: 0;
+      transition: opacity 400ms ease;
+
       animation:
-        entryScaleNumber 2s ease forwards,
-        colorInverse 400ms ease 2s forwards;
+        ApperNumber 400ms ease 600ms forwards,
+        entryScaleNumber 400ms ease both,
+        colorInverse 400ms ease 2s forwards,
+        endScaleNumber 400ms ease 2s forwards;
     }
   }
 }
@@ -77,6 +85,7 @@
 
   overflow: hidden;
 
+  opacity: 0;
   transition: opacity 400ms ease;
 
   /* arrendondando as bordas */
@@ -197,27 +206,14 @@
 }
 
 @keyframes entryScaleBox {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(1.1);
+  100% {
+    scale: 1.1;
   }
 }
 
 @keyframes endScaleBox {
   100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes entryScaleBox {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1.1);
+    scale: 1;
   }
 }
 
@@ -269,26 +265,26 @@
 
 /* animação de  número sorteado */
 
-@keyframes entryScaleNumber {
-  0% {
-    transform: scale(0) translateY(-50%);
-  }
-
-  20% {
-    transform: scale(1.1) translateY(-50%);
-  }
-
-  90% {
-    transform: scale(1.1) translateY(-50%);
-  }
-
-  100% {
-    transform: scale(1) translateY(-50%);
-  }
-}
-
 @keyframes colorInverse {
   to {
     color: var(--content-brand);
+  }
+}
+
+@keyframes entryScaleNumber {
+  100% {
+    font: 700 4rem/150% var(--roboto-mono);
+  }
+}
+
+@keyframes endScaleNumber {
+  100% {
+    font: 700 3rem/150% var(--roboto-mono);
+  }
+}
+
+@keyframes ApperNumber {
+  to {
+    opacity: 1;
   }
 }
