@@ -32,7 +32,29 @@
   }
 }
 
-#close-icon {
+.sucess-message {
+  padding: 1rem;
+  background-color: var(--content-brand);
+
+  border-radius: 0.5rem;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+
+  font: var(--r-flex-14);
+  color: var(--color-inverse);
+
+  position: relative;
+  overflow: hidden;
+
+  animation: apperMessage 400ms ease forwards;
+
+}
+
+.close-icon {
   position: absolute;
   right: 1.5rem;
   cursor: pointer;
@@ -54,6 +76,17 @@
   }
 }
 
+
+
+@keyframes OpacityMessage {
+  from {
+    opacity: 1;
+  }
+
+  to {
+   opacity: 0;
+  }
+}
 @media (width <= 62.5rem) {
   .alert-message {
     font: var(--r-flex-12);
