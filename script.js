@@ -48,7 +48,7 @@ function showAlertMessage(message) {
   alertIcon.alt = "Erro";
 
   const closeIcon = document.createElement("img");
-  closeIcon.id = "close-icon";
+  closeIcon.classList.add("close-icon");
   closeIcon.src = "/assets/icon-close.svg";
   closeIcon.alt = "Fechar";
 
@@ -68,26 +68,70 @@ function showAlertMessage(message) {
   }, 5000); // esconde a mensagem após 5 segundos
 }
 
+function sucessAlertMessage(message) {
+  const sucessMessage = document.querySelector(".sucess-message");
+
+  const sucessIcon = document.createElement("img");
+  sucessIcon.classList.add("sucess-icon");
+  sucessIcon.src = "/assets/icon-success.svg";
+  sucessIcon.alt = "Sucesso";
+
+  const closeIcon = document.createElement("img");
+  closeIcon.classList.add("close-icon");
+  closeIcon.src = "/assets/icon-close.svg";
+  closeIcon.alt = "Fechar";
+  
+  sucessMessage.textContent = message;
+  sucessMessage.classList.remove("invisible"); 
+
+  
+  sucessMessage.prepend(sucessIcon);
+  sucessMessage.appendChild(closeIcon);
+
+  closeIcon.onclick = () => {
+    sucessMessage.classList.add("invisible");
+  };
+  
+  setTimeout(() => {
+    sucessMessage.style.opacity = 0; 
+    sucessMessage.style.transition = "opacity 400ms ease";
+  }, 2000); 
+
+  
+}
+
 // função para validar o formulário
 function validateForm() {
   const amount = parseInt(amountInput.value);
   const initial = parseInt(initialInput.value);
   const final = parseInt(finalInput.value);
 
-  // condições de validação: verifica se os campos estão preenchidos e se o valor inicial é menor que o valor final
-  if (!amount || !initial || !final) {
-    showAlertMessage("Por favor, preencha todos os campos.");
-    return false;
-  } else if (initial >= final) {
-    showAlertMessage("O valor inicial deve ser menor que o valor final.");
-    return false;
-  } else if (amount > final - initial + 1 && noRepeatCheckbox.checked) {
-    showAlertMessage("A quantidade de números excede o intervalo disponível.");
-    return false;
-  } else {
-    return true;
+  // utiliza um switch para validar as condições do formulário e mostrar a mensagem de alerta correspondente
+  switch (true) {
+    case !amount || !initial || !final:
+      showAlertMessage("Por favor, preencha todos os campos.");
+      break;
+    case initial >= final:
+      showAlertMessage("O valor inicial deve ser menor que o valor final.");
+      break;
+    case amount > final - initial + 1:
+      if(noRepeatCheckbox.checked){
+        showAlertMessage("A quantidade de números excede o intervalo disponível."); 
+      }
+      break;
+    case amount <= 0 || initial < 0 || final < 0:
+      showAlertMessage("Por favor, insira valores positivos.");
+      break;
+
+    default:
+      // mostra a mensagem de sucesso apenas no primeiro sorteio, para os próximos sorteios, a mensagem não será exibida
+        if ( DrawNumber === undefined || DrawNumber === 0) {
+          sucessAlertMessage("Gerando números sorteados...");
+        }
+        return true;
   }
 }
+
 
 // função para gerar números aleatórios com repetição;
 function generateRandomNumbers(amount, initial, final) {
@@ -169,7 +213,9 @@ function displayNumbers(numbers) {
         numberContent.append(numberSorted);
         indexNum++;
 
-        setTimeout(showNumbers, 3500); // chama a função novamente após 3,5 segundos para exibir o próximo número
+        setTimeout(showNumbers, 3500);
+
+         // chama a função novamente após 3,5 segundos para exibir o próximo número
       } else {
         const buttonNewDraw = document.createElement("div");
         buttonNewDraw.classList.add("button-new-draw");
@@ -178,7 +224,7 @@ function displayNumbers(numbers) {
         iconContent.classList.add("icon-content");
         const playIcon = document.createElement("img");
         const circleIcon = document.createElement("img");
-        button.type = "submit";
+        button.type = "button";
         button.textContent = "Sortear novamente";
         playIcon.src = "/assets/play.svg";
         playIcon.alt = "Play";
@@ -196,15 +242,24 @@ function displayNumbers(numbers) {
         }, 400);
 
         button.onclick = () => {
-          // limpa a tela de resultado para o próximo sorteio
+          // gera novos números a partir dos valores atuais e exibe
+          const amount = parseInt(amountInput.value);
+          const initial = parseInt(initialInput.value);
+          const final = parseInt(finalInput.value);
+
+          if (!validateForm()) return;
+
+          const newNumbers = generateNumbers(amount, initial, final);
           numbersContainer.innerHTML = "";
-          displayNumbers(numbers); // chama a função para exibir os números novamente
+          displayNumbers(newNumbers);
         };
       }
     }
-
+    
+    
     showNumbers(); // inicia a exibição dos números sorteado
     DrawNumber++; // incrementa o número do sorteio para o próximo resultado
+    
   } catch (error) {
     showAlertMessage(
       "Ocorreu um erro ao exibir os números. Por favor, tente novamente.",
