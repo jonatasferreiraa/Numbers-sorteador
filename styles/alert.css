@@ -93,6 +93,16 @@
     font: var(--r-flex-12);
   }
 
+  .sucess-message {
+    top: 5%;
+  }
+  
+  @keyframes ApperMessage {
+  to {
+    right: 35px;
+  }
+}
+
   #close-icon {
     position: absolute;
     width: 1rem;

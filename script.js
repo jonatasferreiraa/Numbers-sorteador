@@ -81,6 +81,10 @@ function sucessAlertMessage(message) {
 
   
   sucessMessage.prepend(sucessIcon);
+
+    setTimeout(() => {
+    sucessMessage.classList.add("invisible");
+  }, 4000);
 }
 
 // função para validar o formulário
