@@ -33,7 +33,7 @@
 }
 
 .sucess-message {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   background-color: var(--content-brand);
 
   border-radius: 0.5rem;
@@ -41,17 +41,15 @@
   align-items: center;
   justify-content: flex-start;
 
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-
+  gap: .5rem;
   font: var(--r-flex-14);
   color: var(--color-inverse);
 
-  position: relative;
-  overflow: hidden;
+  position: fixed;
+  top: 10%;
+  right: -400px;
 
-  animation: apperMessage 400ms ease forwards;
-
+  animation: ApperMessage 400ms ease forwards, HideMessage 400ms ease 3s forwards;
 }
 
 .close-icon {
@@ -66,16 +64,18 @@
   }
 }
 
-@keyframes apperMessage {
-  from {
-    transform: translateY(-20px);
-  }
 
+@keyframes ApperMessage {
   to {
-    transform: translateY(0);
+    right: 50px;
   }
 }
 
+@keyframes HideMessage {
+  to {
+    right: -400px;
+  }
+}
 
 
 @keyframes OpacityMessage {
@@ -87,6 +87,7 @@
    opacity: 0;
   }
 }
+
 @media (width <= 62.5rem) {
   .alert-message {
     font: var(--r-flex-12);
