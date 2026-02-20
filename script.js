@@ -15,15 +15,15 @@ dataInput.forEach((input) => {
   // observa os valores digitados pelo usuário
   input.oninput = () => {
     let value = input.value.replace(/\D/g, ""); // pega o valor digitado e remove tudo que não for número
-    input.value = value.slice(0, 3); // limita o valor a no máximo 3 caracteres e atualiza o input
+    input.value = value.slice(0, 3); 
   };
 });
 
 // evento de envio do formulário
 form.onsubmit = (event) => {
-  event.preventDefault(); // impede o carregamento de envio do formulário
+  event.preventDefault(); 
 
-  // chama a função de validação do formulário e, se retornar false, interrompe a execução
+  
   if (!validateForm()) {
     return;
   }
@@ -76,28 +76,11 @@ function sucessAlertMessage(message) {
   sucessIcon.src = "/assets/icon-success.svg";
   sucessIcon.alt = "Sucesso";
 
-  const closeIcon = document.createElement("img");
-  closeIcon.classList.add("close-icon");
-  closeIcon.src = "/assets/icon-close.svg";
-  closeIcon.alt = "Fechar";
-  
   sucessMessage.textContent = message;
   sucessMessage.classList.remove("invisible"); 
 
   
   sucessMessage.prepend(sucessIcon);
-  sucessMessage.appendChild(closeIcon);
-
-  closeIcon.onclick = () => {
-    sucessMessage.classList.add("invisible");
-  };
-  
-  setTimeout(() => {
-    sucessMessage.style.opacity = 0; 
-    sucessMessage.style.transition = "opacity 400ms ease";
-  }, 2000); 
-
-  
 }
 
 // função para validar o formulário
@@ -119,14 +102,10 @@ function validateForm() {
         showAlertMessage("A quantidade de números excede o intervalo disponível."); 
       }
       break;
-    case amount <= 0 || initial < 0 || final < 0:
-      showAlertMessage("Por favor, insira valores positivos.");
-      break;
 
-    default:
-      // mostra a mensagem de sucesso apenas no primeiro sorteio, para os próximos sorteios, a mensagem não será exibida
-        if ( DrawNumber === undefined || DrawNumber === 0) {
-          sucessAlertMessage("Gerando números sorteados...");
+    default: 
+        if (!DrawNumber) {
+          sucessAlertMessage("Sorteio realizado com sucesso! Boa sorte!");
         }
         return true;
   }
@@ -188,11 +167,12 @@ function displayNumbers(numbers) {
     numbersContainer.classList.add("number-container");
     resultScreen.append(numbersContainer); // adiciona o container de números à tela de resultado
 
-    // adiciona o container de números ao container principal
+    
 
     // variável para controlar o índice do número a ser exibido
     let indexNum = 0;
 
+    // adiciona o container de números ao container principal
     function showNumbers() {
       // verifica se ainda há números para exibir
       if (indexNum < numbers.length) {
@@ -246,8 +226,6 @@ function displayNumbers(numbers) {
           const amount = parseInt(amountInput.value);
           const initial = parseInt(initialInput.value);
           const final = parseInt(finalInput.value);
-
-          if (!validateForm()) return;
 
           const newNumbers = generateNumbers(amount, initial, final);
           numbersContainer.innerHTML = "";
